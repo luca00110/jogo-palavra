@@ -397,3 +397,84 @@ footer:hover p {
     from { opacity: 0; transform: translateY(20px) scale(0.9); }
     to { opacity: 1; transform: translateY(0) scale(1); }
 }
+
+/* ============================================================
+   DIFFICULTY SELECTOR - AAA STYLE
+============================================================
+*/
+
+.difficulty-selector {
+    margin: 30px 0;
+}
+
+.difficulty-selector p {
+    color: var(--text-dim);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+}
+
+.diff-options {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+/* Esconde o radio button padrão */
+.diff-options input[type="radio"] {
+    display: none;
+}
+
+/* Estilo do botão não selecionado */
+.diff-options label {
+    padding: 10px 20px;
+    border: 1px solid var(--glass-border);
+    border-radius: 8px;
+    color: var(--text-dim);
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 0.9rem;
+    background: rgba(255, 255, 255, 0.02);
+}
+
+/* Efeito Hover Geral */
+.diff-options label:hover {
+    background: rgba(255, 255, 255, 0.05);
+    transform: translateY(-2px);
+}
+
+/* === Cores Ativas por Dificuldade === */
+
+/* FÁCIL (Verde) */
+#diff-facil:checked + label {
+    background: rgba(0, 255, 136, 0.1);
+    border-color: var(--success);
+    color: var(--success);
+    box-shadow: 0 0 15px rgba(0, 255, 136, 0.3);
+}
+
+/* MÉDIO (Laranja) */
+#diff-medio:checked + label {
+    background: rgba(255, 165, 0, 0.1);
+    border-color: #ffa500;
+    color: #ffa500;
+    box-shadow: 0 0 15px rgba(255, 165, 0, 0.3);
+}
+
+/* DIFÍCIL (Vermelho) */
+#diff-dificil:checked + label() {
+    background: rgba(255, 0, 85, 0.1);
+    border-color: var(--error);
+    color: var(--error);
+    box-shadow: 0 0 15px rgba(255, 0, 85, 0.3);
+}
+
+/* Estilo do botão Começar Jogo */
+#start-game-btn {
+    width: 100%;
+    max-width: 400px;
+    margin-top: 10px;
+}

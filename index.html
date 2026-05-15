@@ -15,6 +15,19 @@
         <!-- Tela Inicial (setup-container) -->
         <div id="setup-container">
             <input onkeydown="iniciarJogo(event)" type="text" id="nickname-input" placeholder="Digite seu nickname...">
+            <div class="difficulty-selector">
+                <p>Nível de Ameaça</p>
+                <div class="diff-options">
+                    <input type="radio" name="dificuldade" id="diff-facil" value="facil" checked>
+                    <label for="diff-facil">Fácil</label>
+
+                    <input type="radio" name="dificuldade" id="diff-medio" value="medio">
+                    <label for="diff-medio">Médio</label>
+
+                    <input type="radio" name="dificuldade" id="diff-dificil" value="dificil">
+                    <label for="diff-dificil">Difícil</label>
+                </div>
+            </div>
         </div>
 
         <!-- Tela do Jogo (game-container) -->
@@ -22,10 +35,8 @@
 
             <div id="word-reveal-container" class="hidden">
                 <p>A palavra era:</p>
-                <h3 id="final-word-display"></h3>
-            </div>
-
-            
+                <h2 id="final-word-display" style="color: var(--primary); letter-spacing: 5px;"></h2>
+            </div>            
             <div class="hint-wrapper">
                 <button onclick="obterDica()" id="hint-btn">Revelar Dica</button>
                 <p id="hint-text" class="hidden-hint"></p>
