@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo das Palavras</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Jogo das Palavras</h1>
+
+        <!-- Tela Inicial (setup-container) -->
+        <div id="setup-container">
+            <input onkeydown="iniciarJogo(event)" type="text" id="nickname-input" placeholder="Digite seu nickname...">
+        </div>
+
+        <!-- Tela do Jogo (game-container) -->
+        <div id="game-container" class="hidden">
+
+            <div id="word-reveal-container" class="hidden">
+                <p>A palavra era:</p>
+                <h3 id="final-word-display"></h3>
+            </div>
+
+            
+            <div class="hint-wrapper">
+                <button onclick="obterDica()" id="hint-btn">Revelar Dica</button>
+                <p id="hint-text" class="hidden-hint"></p>
+            </div>
+            <h2 id="player-display"></h2>
+
+            <!-- Exibe as letras (word-display) -->
+            <div id="word-display" class="word-slots"></div>
+
+            <!-- Campo de entrada de dados (input) -->
+            <input onkeydown="tentarLetra(event)" type="text" id="letter-input" maxlength="1" placeholder="Letra">
+
+            <!-- Mostra o status do jogo (status-info) -->
+            <div class="status-info">
+                <p>Erros: <span id="error-count">0</span> / 4</p>
+                <p id="game-message"></p>
+            </div>
+
+            <button onclick="reiniciarJogo()" id="reset-btn" class="hidden">Jogar Novamente</button>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2023 Jogo das Palavras, desenvolvido por <span>Lucas Fonseca</span></p>
+    </footer>
+    <script src="index.js"></script>
+
+
+</body>
+
+</html>
